@@ -16,7 +16,7 @@ public class PagosController : ControllerBase
     public async Task<List<Pagos>> Get() =>
         await _pagosService.GetAsync();
 
-    [HttpGet("{matricula:length(24)}")]
+    [HttpGet("{matricula}")]
     public async Task<ActionResult<Pagos>> Get(string matricula)
     {
         var pago = await _pagosService.GetAsync(matricula);
@@ -37,7 +37,7 @@ public class PagosController : ControllerBase
         return CreatedAtAction(nameof(Get), new { matricula = newPago.NumeroMatricula }, newPago);
     }
 
-    [HttpPut("{matricula:length(24)}")]
+    [HttpPut("{matricula}")]
     public async Task<IActionResult> Update(string matricula, Pagos updatedPago)
     {
         var book = await _pagosService.GetAsync(matricula);
@@ -50,7 +50,7 @@ public class PagosController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{matricula:length(24)}")]
+    [HttpDelete("{matricula}")]
     public async Task<IActionResult> Delete(string matricula)
     {
         var book = await _pagosService.GetAsync(matricula);

@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Threading.Tasks;
 
 namespace API.Models
 {
@@ -8,20 +10,20 @@ namespace API.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
-        [BsonElement("numero_matricula")]
+        [BsonElement("NumeroMatricula")]
         public string NumeroMatricula { get; set; } = null!;
-        [BsonElement("tipopago")]
+        [BsonElement("TipoPago")]
         public string TipoPago { get; set; } = null!;
-        [BsonElement("institucion")]
+        [BsonElement("Institucion")]
         public string Institucion { get; set; } = null!;
-        [BsonElement("nombre")]
-        public string Nombre { get; set; } = null!;
-        [BsonElement("apellidos")]
-        public string Apellidos { get; set; } = null!;
-        [BsonElement("fecha")]
-        public DateTime Fecha { get; set; }
-        [BsonElement("descripcion")]
+        [BsonElement("Descripcion")]
         public string Descripcion { get; set; } = null!;
-
+        [BsonElement("Nombre")]
+        public string Nombre { get; set; } = null!;
+        [BsonElement("Apellidos")]
+        public string Apellidos { get; set; } = null!;
+        [BsonElement("Fecha")]
+        public string Fecha { get; set; } = null!;
+        
     }
 }

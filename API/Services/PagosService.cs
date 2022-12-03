@@ -1,5 +1,7 @@
 ﻿using API.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace API.Services;
@@ -20,9 +22,10 @@ public class PagosService
     }
     public async Task<List<Pagos>> GetAsync() =>
            await _pagosCollection.Find(_ => true).ToListAsync();
-    public async Task<Pagos?> GetAsync(string matricula) =>
-        await _pagosCollection.Find(x => x.NumeroMatricula == matricula).FirstOrDefaultAsync();
-    
+    public async Task<Pagos> GetAsync(string matricula) =>
+        await _pagosCollection.Find(_ => _.NumeroMatricula == matricula).FirstOrDefaultAsync();
+
+
     public async Task CreateAsync(Pagos newPago) =>
         await _pagosCollection.InsertOneAsync(newPago);
     
