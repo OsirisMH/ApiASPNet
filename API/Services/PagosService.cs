@@ -22,16 +22,9 @@ public class PagosService
     }
     public async Task<List<Pagos>> GetAsync() =>
            await _pagosCollection.Find(_ => true).ToListAsync();
-    public async Task<Pagos> GetAsync(string matricula) =>
-        await _pagosCollection.Find(_ => _.NumeroMatricula == matricula).FirstOrDefaultAsync();
-
-
+    public async Task<List<Pagos>> GetAsync(string matricula) =>
+            await _pagosCollection.Find( _ => _.NumeroMatricula == matricula).ToListAsync();
     public async Task CreateAsync(Pagos newPago) =>
         await _pagosCollection.InsertOneAsync(newPago);
     
-    public async Task UpdateAsync(string matricula, Pagos updatedPago) =>
-        await _pagosCollection.ReplaceOneAsync(x => x.NumeroMatricula == matricula, updatedPago);
-
-    public async Task RemoveAsync(string matricula) =>
-        await _pagosCollection.DeleteOneAsync(x => x.NumeroMatricula == matricula);
 }

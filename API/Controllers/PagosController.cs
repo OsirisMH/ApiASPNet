@@ -17,7 +17,7 @@ public class PagosController : ControllerBase
         await _pagosService.GetAsync();
 
     [HttpGet("{matricula}")]
-    public async Task<ActionResult<Pagos>> Get(string matricula)
+    public async Task<ActionResult<List<Pagos>>> Get(string matricula)
     {
         var pago = await _pagosService.GetAsync(matricula);
 
@@ -35,30 +35,5 @@ public class PagosController : ControllerBase
         await _pagosService.CreateAsync(newPago);
 
         return CreatedAtAction(nameof(Get), new { matricula = newPago.NumeroMatricula }, newPago);
-    }
-
-    [HttpPut("{matricula}")]
-    public async Task<IActionResult> Update(string matricula, Pagos updatedPago)
-    {
-        var book = await _pagosService.GetAsync(matricula);
-        if (book is null)
-        {
-            return NotFound();
-        }
-        updatedPago.NumeroMatricula = book.NumeroMatricula;
-        await _pagosService.UpdateAsync(matricula, updatedPago);
-        return NoContent();
-    }
-
-    [HttpDelete("{matricula}")]
-    public async Task<IActionResult> Delete(string matricula)
-    {
-        var book = await _pagosService.GetAsync(matricula);
-        if (book is null)
-        {
-            return NotFound();
-        }
-        await _pagosService.RemoveAsync(matricula);
-        return NoContent();
     }
 }
