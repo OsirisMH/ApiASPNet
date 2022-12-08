@@ -882,31 +882,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ruben\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\peluc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ruben\\Desktop\\Github\\ApiASPNet\\API\\API.csproj",
+      "projectUniqueName": "D:\\Codes\\sistemas_distribuidos\\ApiASPNet\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Ruben\\Desktop\\Github\\ApiASPNet\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ruben\\Desktop\\Github\\ApiASPNet\\API\\obj\\",
+      "projectPath": "D:\\Codes\\sistemas_distribuidos\\ApiASPNet\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\peluc\\.nuget\\packages\\",
+      "outputPath": "D:\\Codes\\sistemas_distribuidos\\ApiASPNet\\API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ruben\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\peluc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
